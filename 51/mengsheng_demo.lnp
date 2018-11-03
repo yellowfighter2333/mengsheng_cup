@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"demo.obj" 
+TO "mengsheng_demo" 
+RAMSIZE(256) 

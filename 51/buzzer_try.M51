@@ -1,0 +1,148 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/03/2018  20:13:57  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+E:\µ¥Æ¬»ú\C51\BIN\BL51.EXE STARTUP.obj, buzzer_try.obj TO buzzer_try RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  buzzer_try.obj (BUZZER_TRY)
+
+
+LINK MAP OF MODULE:  buzzer_try (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0020H     UNIT         ?PR?_DELAYMS?BUZZER_TRY
+            CODE    0820H     000EH     UNIT         ?PR?FENGMING?BUZZER_TRY
+            CODE    082EH     000CH     UNIT         ?C_C51STARTUP
+            CODE    083AH     0005H     UNIT         ?PR?MAIN?BUZZER_TRY
+
+
+
+OVERLAY MAP OF MODULE:   buzzer_try (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?BUZZER_TRY
+
+?PR?MAIN?BUZZER_TRY
+  +--> ?PR?FENGMING?BUZZER_TRY
+
+?PR?FENGMING?BUZZER_TRY
+  +--> ?PR?_DELAYMS?BUZZER_TRY
+
+
+
+SYMBOL TABLE OF MODULE:  buzzer_try (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:082EH         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2018  20:13:57  PAGE 2
+
+
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0831H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:082EH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:082EH         LINE#         133
+  C:0830H         LINE#         134
+  C:0831H         LINE#         135
+  C:0832H         LINE#         136
+  C:0834H         LINE#         185
+  C:0837H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        BUZZER_TRY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  B:00A0H.1       PUBLIC        buzzer
+  C:083AH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0820H         PUBLIC        fengming
+  D:00C8H         PUBLIC        T2CON
+  C:0800H         PUBLIC        _delayms
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAYMS
+  D:0006H         SYMBOL        xms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         6
+  C:0800H         LINE#         7
+  C:0800H         LINE#         9
+  C:080AH         LINE#         10
+  C:081FH         LINE#         11
+  -------         ENDPROC       _DELAYMS
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2018  20:13:57  PAGE 3
+
+
+  -------         PROC          FENGMING
+  C:0820H         LINE#         13
+  C:0820H         LINE#         14
+  C:0820H         LINE#         15
+  C:0822H         LINE#         16
+  C:0829H         LINE#         17
+  C:082BH         LINE#         18
+  -------         ENDPROC       FENGMING
+  -------         PROC          MAIN
+  C:083AH         LINE#         21
+  C:083AH         LINE#         22
+  C:083AH         LINE#         23
+  C:083AH         LINE#         24
+  C:083AH         LINE#         25
+  C:083DH         LINE#         26
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        BUZZER_TRY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0042H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=66
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"buzzer_try.obj" 
+TO "buzzer_try" 
+RAMSIZE(256) 
